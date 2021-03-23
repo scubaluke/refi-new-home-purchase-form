@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChampionLender</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+
+    <link href="./css/mortgage.css" rel="stylesheet" type="text/css" />
+    <link href="./css/loader.css" rel="stylesheet" type="text/css" />
+    <link href="./css/formStyle.css" rel="stylesheet" type="text/css" >
+
+        <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pageloader" id="pageloader">
+        <div class="loader-container">
+            <img src="img/load-gif.gif" alt="processing..." />
+            <h3>Processing...</h3>
+        </div>
+    </div>
+
+    <header>
+        <i class="fas fa-envelope" id="header-icon"></i><a href="#" id="header-info"> info@championlender.com</a>
+        <i class="fas fa-map-marker-alt" id="header-icon"></i><a href="#" id="header-info"> 6900 Tavistock Lakes Blvd
+            Suite 400 Orlando, FL 32827</a>
+        <a href="#"><i class="fab fa-facebook-f" id="social"></i></a>
+        <a href="#"><i class="fab fa-instagram" id="social"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in" id="social"></i></a>
+    </header> 
+   
+    <nav>
+        <input id="nav-toggle" type="checkbox">
+        <img src="img/championlogo.png" class="logo" alt="championlogo">
+        <ul class="links">
+            <li><a href="https://championlender.com/about-us/">ABOUT</a></li>
+            <li><div class="dropdown">
+                    <button class="dropbtn">PRODUCTS <i class="fas fa-angle-down"></i></button>
+                    <div class="dropdown-content">
+                      <a href="https://championlender.com/mortgage-loans/"><i class="fas fa-home" id="drop-products"></i>Mortgage Loans</a>
+                      <a href="https://championlender.com/reverse-mortgages/"><i class="fas fa-undo" id="drop-products"></i></i>Reverse Loans</a>
+                      <a href="#"><i class="fas fa-search" id="drop-products"></i>Home Search</a>
+                      <a href="https://championlender.com/personal-loans/"><i class="fas fa-dollar-sign" id="drop-products"></i></i>Personal Loans</a>
+                      <a href="https://championlender.com/business-loans/"><i class="fas fa-clipboard" id="drop-products"></i>Business Loans</a>
+                      <a href="https://championlender.com/auto-loans/"><i class="fas fa-car" id="drop-products"></i>Auto Loans</a>
+                      <a href="https://championlender.com/student-loans/"><i class="fas fa-graduation-cap" id="drop-products"></i>Student Loans</a>
+                      <a href="https://championlender.com/credit-repair/"><i class="fas fa-hand-holding-usd" id="drop-products"></i>Credit Repair</a>
+                      <a href="https://championlender.com/debt-settlement/"><i class="fas fa-file-invoice-dollar" id="drop-products"></i>Debt Settlement</a>
+                    </div>
+                  </div></li>
+            <li><a href="https://championlender.com/blog/">BLOG</a></li>
+            <li><a href="https://championlender.com/partner-with-us/">PARTNER WITH US</a></li>
+            <li><a href="https://championlender.com/contact-us/">CONTACT US</a></li>
+            |
+            <i class="fas fa-comments" id="speech"></i><a href="tel:401-655-1847" style="color: black;">(401)
+                    655-1847</a>
+        </ul>
+        <label for="nav-toggle" class="icon-burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+    </nav>
+
+
+
+    <section class="hero">
+
+    </section>
+
+    <div class="progressBar">
+        <div class="the-bar"></div>
+        <!-- <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div>
+        <div class="progressIndicator"></div> -->
+
+      </div>
+        
+        <form id="lp_form" name="lp_form" method="post"
+        action="https://chlend.linktrustleadgen.com/Lead/432598/SimplePost">
+
+        <input type='hidden' id='ResponseFormat' name='ResponseFormat' value='json' />
+        <input type='hidden' id='successUrl' name='successUrl' value='https://championlender.com/' />
+        <input type='hidden' id='failureUrl' name='failureUrl' value='https://championlender.com/' />
+
+ <!-- form box 0 start -->
+        <div data-field="PRODUCT" class="form-box form-box-0">
+            <h2 class="text-center">Which type of home loan are you interested in?</h2>
+            <div class="form-group text-center">
+                <button data-value="PP_REFI" data-slide="1" class="question green-btn">Refinance</button>
+                   <a class="nhp-link green-btn" href="/new-home">New Home Purchase</a>
+            
+            </div>
+        </div>
+  <!-- form box 0 end -->
+
+ <!-- form box 1 start -->
+        <div data-field="LOAN_TYPE" class="form-box form-box-1" style="display:none;">
+            <h2 class="text-center">Desired interest rate</h2>
+            <div class="form-group text-center">
+                <button data-value="FIXED" class="question green-btn">Fixed</button>
+                <button data-value="ADJUSTABLE" class="question green-btn">Adjustable</button>
+            </div>
+            <hr>
+            <button class="gold-btn">Go Back</button>
+        </div>
+ <!-- form box 1 end -->
+
+<!-- form box 2 start -->
+        <div data-field="PROP_DESC" class="form-box form-box-2" style="display:none;">
+            <h2 class="text-center">What type of property do you have or are looking for?</h2>
+            <div class="form-group text-center">
+                <button data-value="SINGLE_FAM" class=" question green-btn">Single Family</button>
+                <button data-value="MULTI_FAM" class="question green-btn">Multi Family</button>
+            </div>
+            <div class="form-group text-center">
+                <button data-value="CONDO" class="question  green-btn">Condo</button>
+                <button data-value="TOWNHOME" class="question  green-btn">Townhome</button>
+            </div>
+            <div class="form-group text-center">
+                <button data-value="MANUFACTURED_HOME" class="question green-btn">Mobile Home</button>
+             
+            </div>
+            <hr>
+            <button class="gold-btn">Go Back</button>
+        </div>
+<!-- form box 2 end -->
+
+
+<!-- form box 3 start -->
+        <div data-field="VA_STATUS" class="form-box form-box-3" style="display:none;">
+            <h2 class="text-center">Are you Active Duty or Retired Military Service Member?</h2>
+            <div class="form-group text-center">
+                <button data-value="YES" class="question green-btn">Yes</button>
+                <button data-value="NO" class="question green-btn">No</button>                               
+            </div>
+            <hr>
+            <button class="gold-btn">Go Back</button>
+        </div>
+<!-- form box 3 end -->
+
+<!-- form box 4 start -->
+        <div data-field="CRED_GRADE" class="form-box form-box-4" style="display:none;">
+            <h2 class="text-center">How would you rate your credit?</h2>
+            <div class="form-group text-center">
+                <button data-value="EXCELLENT" class="question  green-btn">Excellent</button>
+                <button data-value="GOOD" class="question  green-btn">Good</button>
+            </div>
+            <div class="form-group text-center">
+                <button data-value="FAIR" class="question  green-btn">Fair</button>
+                <button data-value="POOR" class="question  green-btn">Poor</button>
+            </div>
+            <hr>
+            <button class="gold-btn">Go Back</button>
+        </div>
+<!-- form box 4 enc -->
+
+<!-- form box 5 start -->
+        <div data-field="FHA_BANK_FORECLOSURE" class="form-box form-box-5" style="display:none;">
+            <h2 class="text-center">Have you ever had a foreclosure?</h2>
+            <div class="form-group text-center">
+                <button data-value="yes" class="question green-btn">Yes</button>
+                <button data-value="no" class="question green-btn">No</button>
+            </div>
+            <hr>
+            <button class="gold-btn">Go Back</button>
+        </div>
+<!-- form box 5 end -->
+
+
+<!-- form box 6 end -->
+        <div data-field="NUM_MORTGAGE_LATES" class="form-box form-box-6" style="display:none;">
+            <h2 class="text-center">Have you made any mortgage payments late?</h2>
+            <div class="form-group text-center">
+                <button data-value="NONE" class="question green-btn">None</button>
+                <button data-value="ONE" class="question green-btn">One</button>
+            </div>
+            <div class="form-group text-center">
+                <button data-value="TWO_OR_MORE" class="question  green-btn">Two Or More</button>      
+            </div>
+            <hr>
+            <button class="gold-btn">Go Back</button>
+        </div>
+<!-- form box 6 end -->
+<!-- form box 6.5 start -->
+<div data-field="BANKRUPTCY" class="form-box form-box-6.5" style="display:none;">
+    <h2 class="text-center">Have you had a bankruptcy in the past 7 years?</h2>
+    <div class="form-group text-center">
+        <button data-value="1" class="question green-btn">Yes</button>
+        <button data-value="0" class="question green-btn">No</button>
+    </div>
+    <hr>
+    <button class="gold-btn">Go Back</button>
+</div>
+<!-- form box 6.5 end -->
+
+<!-- form box 7 start -->
+        <div data-field="ANNUAL_VERIFIABLE_INCOME" class="form-box form-box-7" style="display:none;">
+            <h2 class="text-center">Annual Verifiable Income?</h2>
+
+            <div class="form-group text-center">
+                <button data-value="YES" class="question green-btn">Yes</button>
+                <button data-value="NO" class="question green-btn">No</button>
+            </div>
+            <hr>
+            <button class="gold-btn">Go Back</button>
+        </div>
+<!-- form-box-7 end -->
+
+<!-- form box 8 end -->
+        <div data-field="BUY_TIMEFRAME" class="form-box form-box-8" style="display:none;">
+            <h2 class="text-center">What is your timeframe?</h2>
+            <div class="form-group text-center">
+                <button data-value="immediately" class="question  green-btn">Immediately</button>
+                <button data-value="30_days" class="question  green-btn">30 days</button>
+            </div>
+            <div class="form-group text-center"> <button data-value="60_days" class=" question  green-btn">60 days</button>
+                <button data-value="90_days" class="question  green-btn">90 days</button>
+            </div>
+            <div class="form-group text-center">
+                <button data-value="no_time_constraint" class="question green-btn">No time
+                    constraint</button>
+            </div>
+            <hr>
+            <button class="gold-btn">Go Back</button>
+        </div>
+<!-- form box 8 end -->
+
+<!-- form box 9 start -->
+        <div data-field="state" class="form-box form-box-9" style="display:none;">
+
+            <h2 class="text-center">State</h2>
+
+            <div class="form-group text-center fw">
+                <select class="select-styled" id="state" name="state" class="form-control fld-center">
+                    <option value="" selected="selected">Select State *</option>
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AZ">AZ</option>
+                    <option value="AR">AR</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DC">DC</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="IA">IA</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="ME">ME</option>
+                    <option value="MD">MD</option>
+                    <option value="MA">MA</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MS">MS</option>
+                    <option value="MO">MO</option>
+                    <option value="MT">MT</option>
+                    <option value="NE">NE</option>
+                    <option value="NV">NV</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NY">NY</option>
+                    <option value="NC">NC</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WV">WV</option>
+                    <option value="WI">WI</option>
+                    <option value="WY">WY</option>
+                </select>
+            </div>
+            <div class="form-group text-center">
+                <button class="next green-btn">Continue</button>
+            </div>
+            <hr>
+            <button class="gold-btn">Go Back</button>
+        </div>
+<!-- form box 9 end -->
+
+ <!-- form box 10 start -->
+        <div data-field="propertyValue" class="form-box form-box-10" style="display:none;">
+
+            <h2 class="text-center" style="font-size: 20px;margin-bottom:0px;">Please estimate the value
+                of the property</h2>
+            <div class="form-group text-center">
+                <label class="slider-label">
+                    <input type="range" min="50000" max="1500000" value="500000" step="5000"
+                        class="slider form-control custom-space" id="EST_VAL" name="EST_VAL">
+                </label>
+            </div>
+            <div id="myRangeTextContainer" class="text-center"><span id="EST_VALText">$500,000</span></div>
+        
+            <h1 class="text-center" style="font-size: 20px;margin-bottom:0px;">What is the remaining 1st
+                mortgage balance?</h1>
+            <div class="form-group text-center">
+                <label class="slider-label">
+                    <input type="range" min="10000" max="1000000" value="10000" step="50000"
+                        class="slider form-control custom-space" id="BAL_ONE" name="BAL_ONE">
+                </label>
+            </div>
+            <div id="myRangeTextContainer" class="text-center"><span id="BAL_ONEText">$10,000</span></div>
+
+            <div class="form-group text-center">
+                <button class="next green-btn">Continue</button>
+            </div>
+            <hr>
+            <button class="gold-btn">Go Back</button>
+        </div>
+<!-- form box 10 end -->
+
+<!-- form box 11 start -->
+        <div data-field="additionalCash" class="form-box form-box-11" style="display:none;">
+
+            <h2 class="text-center">Would you like to borrow additional cash?</h2>
+            <div class="form-group text-center">
+                <label class="slider-label">
+                    <input type="range" min="0" max="200000" value="0" step="10000"
+                        class="slider form-control" id="ADD_CASH" name="ADD_CASH">
+                </label>
+            </div>
+            <div id="myRangeTextContainer" class="text-center"><span id="ADD_CASHText">$0</span></div>
+    
+            <div class="form-group text-center">
+                <button class="next green-btn">Continue</button>
+            </div>
+            <hr>
+            <button class="gold-btn">Go Back</button>
+        </div>
+<!-- form box 11 enc -->
+
+
+<!-- form box 12 start -->
+        <div data-field="address" class="form-box form-box-12" style="display:none;">
+            <h2 class="text-center">What is Your Current Address?</h2>
+            <div class="form-group text-center fw">
+                <input type="text" name="address" id="address" class="input-styled form-control fld-center"
+                    placeholder="Address *">
+            </div>
+            <div class="form-group text-center fw">
+                <input type="text" name="city" id="city" class="input-styled form-control fld-center"
+                    placeholder="City *">
+            </div>
+            <div class="form-group text-center fw">
+        
+            </div>
+            <div class="form-group text-center fw">
+                <select class="select-styled" id="country" name="country" class="form-control fld-center">
+                    <option value="" selected="selected">Select Country *</option>
+                    <option value="AF">AF</option>
+                    <option value="AL">AL</option>
+                    <option value="DZ">DZ</option>
+                    <option value="AS">AS</option>
+                    <option value="AD">AD</option>
+                    <option value="AO">AO</option>
+                    <option value="AI">AI</option>
+                    <option value="AQ">AQ</option>
+                    <option value="AG">AG</option>
+                    <option value="AR">AR</option>
+                    <option value="AM">AM</option>
+                    <option value="AW">AW</option>
+                    <option value="AU">AU</option>
+                    <option value="AT">AT</option>
+                    <option value="AZ">AZ</option>
+                    <option value="BS">BS</option>
+                    <option value="BH">BH</option>
+                    <option value="BD">BD</option>
+                    <option value="BB">BB</option>
+                    <option value="BY">BY</option>
+                    <option value="BE">BE</option>
+                    <option value="BZ">BZ</option>
+                    <option value="BJ">BJ</option>
+                    <option value="BM">BM</option>
+                    <option value="BT">BT</option>
+                    <option value="BO">BO</option>
+                    <option value="BA">BA</option>
+                    <option value="BW">BW</option>
+                    <option value="BV">BV</option>
+                    <option value="BR">BR</option>
+                    <option value="IO">IO</option>
+                    <option value="BN">BN</option>
+                    <option value="BG">BG</option>
+                    <option value="BF">BF</option>
+                    <option value="BI">BI</option>
+                    <option value="KH">KH</option>
+                    <option value="CM">CM</option>
+                    <option value="CA">CA</option>
+                    <option value="CV">CV</option>
+                    <option value="KY">KY</option>
+                    <option value="CF">CF</option>
+                    <option value="TD">TD</option>
+                    <option value="CL">CL</option>
+                    <option value="CN">CN</option>
+                    <option value="CX">CX</option>
+                    <option value="CC">CC</option>
+                    <option value="CO">CO</option>
+                    <option value="KM">KM</option>
+                    <option value="CG">CG</option>
+                    <option value="CD">CD</option>
+                    <option value="CK">CK</option>
+                    <option value="CR">CR</option>
+                    <option value="CI">CI</option>
+                    <option value="HR">HR</option>
+                    <option value="CU">CU</option>
+                    <option value="CY">CY</option>
+                    <option value="CZ">CZ</option>
+                    <option value="DK">DK</option>
+                    <option value="DJ">DJ</option>
+                    <option value="DM">DM</option>
+                    <option value="DO">DO</option>
+                    <option value="TP">TP</option>
+                    <option value="EC">EC</option>
+                    <option value="EG">EG</option>
+                    <option value="SV">SV</option>
+                    <option value="GQ">GQ</option>
+                    <option value="ER">ER</option>
+                    <option value="EE">EE</option>
+                    <option value="ET">ET</option>
+                    <option value="FK">FK</option>
+                    <option value="FO">FO</option>
+                    <option value="FJ">FJ</option>
+                    <option value="FI">FI</option>
+                    <option value="FR">FR</option>
+                    <option value="FX">FX</option>
+                    <option value="GF">GF</option>
+                    <option value="PF">PF</option>
+                    <option value="TF">TF</option>
+                    <option value="GA">GA</option>
+                    <option value="GM">GM</option>
+                    <option value="GE">GE</option>
+                    <option value="DE">DE</option>
+                    <option value="GH">GH</option>
+                    <option value="GI">GI</option>
+                    <option value="GR">GR</option>
+                    <option value="GL">GL</option>
+                    <option value="GD">GD</option>
+                    <option value="GP">GP</option>
+                    <option value="GU">GU</option>
+                    <option value="GT">GT</option>
+                    <option value="GN">GN</option>
+                    <option value="GW">GW</option>
+                    <option value="GY">GY</option>
+                    <option value="HT">HT</option>
+                    <option value="HM">HM</option>
+                    <option value="VA">VA</option>
+                    <option value="HN">HN</option>
+                    <option value="HK">HK</option>
+                    <option value="HU">HU</option>
+                    <option value="IS">IS</option>
+                    <option value="IN">IN</option>
+                    <option value="ID">ID</option>
+                    <option value="IR">IR</option>
+                    <option value="IQ">IQ</option>
+                    <option value="IE">IE</option>
+                    <option value="IL">IL</option>
+                    <option value="IT">IT</option>
+                    <option value="JM">JM</option>
+                    <option value="JP">JP</option>
+                    <option value="JO">JO</option>
+                    <option value="KZ">KZ</option>
+                    <option value="KE">KE</option>
+                    <option value="KI">KI</option>
+                    <option value="KP">KP</option>
+                    <option value="KR">KR</option>
+                    <option value="KW">KW</option>
+                    <option value="KG">KG</option>
+                    <option value="LA">LA</option>
+                    <option value="LV">LV</option>
+                    <option value="LB">LB</option>
+                    <option value="LS">LS</option>
+                    <option value="LR">LR</option>
+                    <option value="LY">LY</option>
+                    <option value="LI">LI</option>
+                    <option value="LT">LT</option>
+                    <option value="LU">LU</option>
+                    <option value="MO">MO</option>
+                    <option value="MK">MK</option>
+                    <option value="MG">MG</option>
+                    <option value="MW">MW</option>
+                    <option value="MY">MY</option>
+                    <option value="MV">MV</option>
+                    <option value="ML">ML</option>
+                    <option value="MT">MT</option>
+                    <option value="MH">MH</option>
+                    <option value="MQ">MQ</option>
+                    <option value="MR">MR</option>
+                    <option value="MU">MU</option>
+                    <option value="YT">YT</option>
+                    <option value="MX">MX</option>
+                    <option value="FM">FM</option>
+                    <option value="MD">MD</option>
+                    <option value="MC">MC</option>
+                    <option value="MN">MN</option>
+                    <option value="ME">ME</option>
+                    <option value="MS">MS</option>
+                    <option value="MA">MA</option>
+                    <option value="MZ">MZ</option>
+                    <option value="MM">MM</option>
+                    <option value="NA">NA</option>
+                    <option value="NR">NR</option>
+                    <option value="NP">NP</option>
+                    <option value="NL">NL</option>
+                    <option value="AN">AN</option>
+                    <option value="NC">NC</option>
+                    <option value="NZ">NZ</option>
+                    <option value="NI">NI</option>
+                    <option value="NE">NE</option>
+                    <option value="NG">NG</option>
+                    <option value="NU">NU</option>
+                    <option value="NF">NF</option>
+                    <option value="MP">MP</option>
+                    <option value="NO">NO</option>
+                    <option value="OM">OM</option>
+                    <option value="PK">PK</option>
+                    <option value="PW">PW</option>
+                    <option value="PA">PA</option>
+                    <option value="PG">PG</option>
+                    <option value="PY">PY</option>
+                    <option value="PE">PE</option>
+                    <option value="PH">PH</option>
+                    <option value="PN">PN</option>
+                    <option value="PL">PL</option>
+                    <option value="PT">PT</option>
+                    <option value="PR">PR</option>
+                    <option value="QA">QA</option>
+                    <option value="RE">RE</option>
+                    <option value="RO">RO</option>
+                    <option value="RU">RU</option>
+                    <option value="RW">RW</option>
+                    <option value="KN">KN</option>
+                    <option value="LC">LC</option>
+                    <option value="VC">VC</option>
+                    <option value="WS">WS</option>
+                    <option value="SM">SM</option>
+                    <option value="ST">ST</option>
+                    <option value="SA">SA</option>
+                    <option value="SN">SN</option>
+                    <option value="RS">RS</option>
+                    <option value="SC">SC</option>
+                    <option value="SL">SL</option>
+                    <option value="SG">SG</option>
+                    <option value="SK">SK</option>
+                    <option value="SI">SI</option>
+                    <option value="SB">SB</option>
+                    <option value="SO">SO</option>
+                    <option value="ZA">ZA</option>
+                    <option value="SS">SS</option>
+                    <option value="GS">GS</option>
+                    <option value="ES">ES</option>
+                    <option value="LK">LK</option>
+                    <option value="SH">SH</option>
+                    <option value="PM">PM</option>
+                    <option value="SD">SD</option>
+                    <option value="SR">SR</option>
+                    <option value="SJ">SJ</option>
+                    <option value="SZ">SZ</option>
+                    <option value="SE">SE</option>
+                    <option value="CH">CH</option>
+                    <option value="SY">SY</option>
+                    <option value="TW">TW</option>
+                    <option value="TJ">TJ</option>
+                    <option value="TZ">TZ</option>
+                    <option value="TH">TH</option>
+                    <option value="TG">TG</option>
+                    <option value="TK">TK</option>
+                    <option value="TO">TO</option>
+                    <option value="TT">TT</option>
+                    <option value="TN">TN</option>
+                    <option value="TR">TR</option>
+                    <option value="TM">TM</option>
+                    <option value="TC">TC</option>
+                    <option value="TV">TV</option>
+                    <option value="UG">UG</option>
+                    <option value="UA">UA</option>
+                    <option value="AE">AE</option>
+                    <option value="GB">GB</option>
+                    <option value="US" selected="selected">USA</option>
+                    <option value="UM">UM</option>
+                    <option value="UY">UY</option>
+                    <option value="UZ">UZ</option>
+                    <option value="VU">VU</option>
+                    <option value="VE">VE</option>
+                    <option value="VN">VN</option>
+                    <option value="VG">VG</option>
+                    <option value="VI">VI</option>
+                    <option value="WF">WF</option>
+                    <option value="EH">EH</option>
+                    <option value="YE">YE</option>
+                    <option value="ZM">ZM</option>
+                    <option value="ZW">ZW</option>
+                </select>
+            </div>
+            <div class="form-group text-center">
+                <button class="next green-btn">Continue</button>
+            </div>
+            <hr>
+            <button class="gold-btn">Go Back</button>
+        </div>
+<!-- form box 12 start -->
+
+  <!-- form box 13 start -->
+        <div data-field="contact" class="form-box form-box-13" style="display:none;">
+            <h2 class="text-center">How can we contact you?</h2>
+            <div class="form-group text-center fw">
+                <input type="text" name="first_name" id="first_name" class="input-styled form-control fld-center"
+                    placeholder="First Name *">
+            </div>
+            <div class="form-group text-center fw">
+                <input type="text" name="last_name" id="last_name" class="input-styled form-control fld-center"
+                    placeholder="Last Name *">
+            </div>
+            <div class="form-group text-center fw">
+                <input type="email" name="email_address" id="email_address"
+                    class="input-styled form-control fld-center" placeholder="Email Address *">
+            </div>
+            <div class="form-group text-center fw">
+                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone_home" id="phone_home" class=" input-styled form-control fld-center"
+                    placeholder="Phone Home *">
+            </div>
+            <div class="form-group text-center fw">
+                <input type="text" name="phone_work" id="phone_work" class="input-styled form-control fld-center"
+                    placeholder="Work Phone">
+            </div>
+            <div class="form-group text-center fw">
+                <input type="text" name="phone_cell" id="phone_cell" class="input-styled form-control fld-center"
+                    placeholder="Cell Phone">
+            </div>
+            <div class="form-group text-center fw">
+                <select class="select-styled" id="best_time" name="best_time" class="input-styledform-control fld-center">
+                    <option value="" selected="selected">Select Best Time To Call</option>
+                    <option value="M">Morning</option>
+                    <option value="A">Afternoon</option>
+                    <option value="E">Evening</option>
+                </select>
+            </div>
+
+            <p class="tcpa-language-slide">By clicking the button
+                below, you acknowledge, consent and agree to the following: a) Our Privacy
+                Policy and consent to receive notices and other communications electronically from
+                Champion Lender
+                (a Champion Leads LLC Brand) SecureRights and our
+                <a href="https://championlender.com/premier-partners/">Premier Partners</a>
+                ; b) We take your privacy
+                seriously. You are providing express written consent for Champion Lender (a Champion
+                Leads LLC
+                Brand) SecureRights and our
+                Premier Partners
+                to share your information with up to four (4) of its
+                Premier Partners and for SecureRights, parties calling on behalf of Champion Lender (a
+                Champion Leads LLC Brand) SecureRights and our Premier Partners or authorized third
+                parties on their behalf to contact you (including through automated means; e.g.
+                autodialing, text and pre-recorded messaging) about financial services or other credit
+                related offers via telephone, mobile device (including SMS and MMS) and/or email, even
+                if your telephone number is currently listed on any state, federal, local or corporate
+                Do Not Call list; c) Consent to be contacted is not required in order to purchase goods
+                or services from Champion Lender (a Champion Leads LLC Brand) SecureRights and our
+                Premier Partners that contact you. You may choose to speak with an individual service
+                provider by dialing (888) 883-2062; d) That I have received and reviewed the Mortgage
+                Broker Disclosures for my state; and e) You are providing written consent under the Fair
+                Credit Reporting Act for Champion Lender (a Champion Leads LLC Brand) SecureRights and
+                our Premier Partners to obtain information from your personal credit profile. You
+                authorize Champion Lender (a Champion Leads LLC Brand) SecureRights and our Premier
+                Partners to obtain such information solely to prequalify you for credit options and
+                connect you with an appropriate lending partner. SecureRights NMLS 3175.
+            </p>
+            <div class="form-group fw checkbox">
+                <label>
+                    <input type="checkbox" id="opt_in-checkbox" name="opt_in-checkbox" /> I agree to terms & conditions *.
+                </label>
+            </div>
+
+
+            <div class="form-group text-center">
+                <button class="submit green-btn">Submit</button>
+            </div>
+            <hr>
+            <button class=" gold-btn">Go Back</button>
+        </div>
+<!-- form box 13 end -->
+
+        <input type="hidden" autocomplete="off" name="BANKRUPTCY" id="BANKRUPTCY" />
+        <input type="hidden" autocomplete="off" name="opt_in" id="opt_in" />
+        <input type="hidden" autocomplete="off" name="PRODUCT" id="PRODUCT" />
+        <input type="hidden" autocomplete="off" name="LOAN_TYPE" id="LOAN_TYPE" />
+        <input type="hidden" autocomplete="off" name="PROP_DESC" id="PROP_DESC" />
+        <input type="hidden" autocomplete="off" name="VA_STATUS" id="VA_STATUS" />
+        <input type="hidden" autocomplete="off" name="CRED_GRADE" id="CRED_GRADE" />
+        <input type="hidden" autocomplete="off" name="FHA_BANK_FORECLOSURE" id="FHA_BANK_FORECLOSURE" />
+        <input type="hidden" autocomplete="off" name="NUM_MORTGAGE_LATES" id="NUM_MORTGAGE_LATES" />
+        <input type="hidden" autocomplete="off" name="BUY_TIMEFRAME" id="BUY_TIMEFRAME" />
+
+        <input type="hidden" name="ANNUAL_VERIFIABLE_INCOME" value="" />
+        <input type="hidden" name="SPEC_HOME" value="YES" />
+        <input type="hidden" id="leadid_token" name="SR_TOKEN" value="" />
+        <input type="hidden" name="SR_URL" value="https://championlender.com/" />
+        <input type="hidden" name="DOWN_PMT" value="" />
+        <input type="hidden" name="PROP_ST" value="" />
+
+        <textarea name="TCPA_LANGUAGE"
+            style="display:none;">By clicking the button below, you acknowledge, consent and agree to the following: a) Our Privacy
+Policy and consent to receive notices and other communications electronically from Champion Lender
+(a Champion Leads LLC Brand) SecureRights and our Premier Partners;
+b) We take your privacy
+seriously. You are providing express written consent for Champion Lender (a Champion Leads LLC
+Brand) SecureRights and our Premier Partners to share your information with up to four (4) of its
+Premier Partners and for SecureRights, parties calling on behalf of Champion Lender (a Champion Leads LLC Brand) SecureRights and our Premier Partners or authorized third parties on their behalf to contact you (including through automated means; e.g. autodialing, text and pre-recorded messaging) about financial services or other credit related offers via telephone, mobile device (including SMS and MMS) and/or email, even if your telephone number is currently listed on any state, federal, local or corporate Do Not Call list; c) Consent to be contacted is not required in order to purchase goods or services from Champion Lender (a Champion Leads LLC Brand) SecureRights and our Premier Partners that contact you. You may choose to speak with an individual service provider by dialing (888) 883-2062; d) That I have received and reviewed the Mortgage Broker Disclosures for my state; and e) You are providing written consent under the Fair Credit Reporting Act for Champion Lender (a Champion Leads LLC Brand) SecureRights and our Premier Partners to obtain information from your personal credit profile. You authorize Champion Lender (a Champion Leads LLC Brand) SecureRights and our Premier Partners to obtain such information solely to prequalify you for credit options and connect you with an appropriate lending partner. SecureRights NMLS 3175.</textarea>
+
+
+        <input type='hidden' id='AFID' name='AFID' />
+        <input type="hidden" id="zip_code" name="zip_code" />
+
+        <input type='hidden' id='SID' name='SID' value='' />
+        <input type='hidden' id='ADID' name='ADID' value='' />
+        <input type='hidden' id='ClickID' name='ClickID' value='' />
+        <input type='hidden' id='AffiliateReferenceID' name='AffiliateReferenceID' value='' />
+<!-- todo: ip address -->
+        <input type='hidden' id='IPAddress' name='IPAddress' value='' />
+        <!-- <script>
+            document.querySelector('#AFID').value = document.referrer.split('?AFID=')[1] || '465368'
+        </script> -->
+
+    </form>
+
+
+
+
+        <div class="flex-container">
+
+        </div>
+    </section>
+
+    <section class="who">
+        <div class="flex-container">
+
+            <i class="fas fa-trophy" id="trophy"></i>
+        </div>
+        <h3>Champion Lender is a free service to help you get started on securing a mortgage loan...</h3>
+        <div class="flex-container">
+
+            <p class="summary">Champion Lender is a free service to help you get started on securing a mortgage loan,
+                refinancing an existing loan, utilizing your home equity, or look into a reverse mortgage. Using your
+                information, we connect you to some of the most trusted lenders in the U.S. Armed with competing offers,
+                you’ll have an edge in negotiating the deal you want! We request only minimal, necessary information to
+                get the process started and we use advanced security measures to keep all data confidential and shared
+                only with trusted lenders. Our rate providers will help you find the perfect deal by answering your
+                questions, going over your available options, & offering you competitive rate quotes.</p>
+        </div>
+    </section>
+
+    <section class="brands">
+        <h4 class="Disclaimer">Disclaimer:</h4>
+        <div class="flex-container">
+
+            <p class="terms">We are not a loan provider. Rather, we match you with loan providers, banks, financial
+                institutions and affiliates (collectively, “partners”) to give you, the consumer, an opportunity to get
+                information about mortgage products and connect with licensed partners that may extend a mortgage
+                product to you. All loan approval decisions and terms are determined by our partners at the time of your
+                application with them, and there is no guarantee that you will be approved for a mortgage product or
+                that you will qualify for the advertised rates. By completing the form or calling the number listed
+                above, you will be directed to a partner that can discuss these mortgage opportunities with you.<br>
+                <br>
+                Products and services are provided exclusively by our partners, and rates and terms are subject to
+                change by the partners without warranty or notice. Not all offer the same products, rates, or options.
+                We encourage you to shop around and explore all of your options. We are not affiliated with or endorsed
+                by any government entity or agency.<br>
+                <br>
+                By using this site, you acknowledge that you have read and agree to the Privacy Policy and Terms &
+                Conditions.</p>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <img src="img/championlogo.png" class="bottom-champ" alt="championlogo">
+                    <img src="img/houselogo.png" class="bottom-house" alt="houselogo">
+                </div>
+                <div class="col-sm">
+                    <h4 class="foot-label">ABOUT US</h4>
+                    <hr class="gold">
+
+                    <div>
+                        <a href="#" id="bottom-search">About Champion Lender</a>
+                        |
+                        <a href="#" id="bottom-search">Blog</a>
+                        |
+                        <a href="#" id="bottom-search">Partner With Us</a>
+                        |
+                        <a href="#" id="bottom-search">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <h4 class="foot-label">COMPARE RATES THE SECURE WAY</h4>
+
+                    <hr class="gold">
+
+                    <p class="foot-font">All data processed through Champion Lender is encrypted with the latest 256-bit
+                        encryption technology.</p>
+                    <img src="img/256bit.png">
+
+                </div>
+                <div class="col-sm">
+                    <h4 class="foot-label">DISCLOSURES</h4>
+
+                    <hr class="gold">
+
+                    <div class="foot-font">
+                        <li><a href="https://championlender.com/definitions/" id="bottom-search">Definitions</a></li>
+                        <li><a href="https://championlender.com/terms-of-service/" id="bottom-search">Terms of
+                                Service</a></li>
+                        <li><a href="https://championlender.com/advertising-disclosure/" id="bottom-search">Advertising
+                                Disclosure</a></li>
+                        <li><a href="https://championlender.com/privacy-policy/" id="bottom-search">Privacy Policy</a>
+                        </li>
+                        <li><a href="https://championlender.com/unsubscribe/" id="bottom-search">Unsubscribe</a></li>
+                        <li><a href="https://championlender.com/premier-partners/" id="bottom-search">Premier
+                                Partners</a></li>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <h4 class="foot-label">PRODUCTS</h4>
+
+                    <hr class="gold">
+
+                    <div class="foot-font">
+                        <li><a href="https://championlender.com/personal-loans/" id="bottom-search">Personal Loans</a>
+                        </li>
+                        <li><a href="https://championlender.com/mortgage-loans/" id="bottom-search">Mortgage Loans</a>
+                        </li>
+                        <li><a href="https://championlender.com/reverse-mortgages/" id="bottom-search">Reverse
+                                Mortgages</a></li>
+                        <li><a href="https://championlender.com/auto-loans/" id="bottom-search">Auto Loans</a></li>
+                        <li><a href="https://championlender.com/student-loans/" id="bottom-search">Student Loans</a>
+                        </li>
+                        <li><a href="https://championlender.com/credit-repair/" id="bottom-search">Credit Repair</a>
+                        </li>
+                        <li><a href="https://championlender.com/debt-settlement/" id="bottom-search">Debt Settlement</a>
+                        </li>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <h4 class="foot-label">FIND US</h4>
+
+                    <hr class="gold">
+
+                    <div class="foot-font">
+                        <li><i class="fas fa-map-marker-alt" id="bottom-right"></i> 6900 Tavistock Lakes Blvd Suite 400
+                            Orlando, FL 32827</li>
+                        <li><i class="fas fa-phone-alt" id="bottom-right"></i><a href="tel:401-655-1847">(401)
+                                655-1847</a></li>
+                        <li><i class="fas fa-envelope" id="bottom-right"></i><a
+                                href="mailto:info@championlender.com">info@championlender.com</a></li>
+                        <li><i class="fas fa-history" id="bottom-right"></i>Mon-Fri: 9:00AM - 5:00PM <br> Sat-Sun:
+                            Closed</li>
+                        <i class="fab fa-facebook-square" id="bottom-icon"></i><i class="fab fa-instagram-square"
+                            id="bottom-icon"></i><i class="fab fa-linkedin" id="bottom-icon"></i>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="./index.js"></script>
+        
+    <script id="LeadiDscript" type="text/javascript">
+        (function() {
+        var s = document.createElement('script');
+        s.id = 'LeadiDscript_campaign';
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//create.lidstatic.com/campaign/cd215e19-865f-3649-c858-0b6646c7cfa9.js?snippet_version=2';
+        var LeadiDscript = document.getElementById('LeadiDscript');
+        LeadiDscript.parentNode.insertBefore(s, LeadiDscript);
+        })();
+        </script>
+        <noscript><img src='//create.leadid.com/noscript.gif?lac=5a78319c-dbbd-54af-cb0a-a61a01c27aa9&lck=cd215e19-865f-3649-c858-0b6646c7cfa9&snippet_version=2' /></noscript>
+    
+</body>
+</html>

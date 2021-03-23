@@ -1,0 +1,295 @@
+/* .form-progress {
+  display: flex;
+  height: 30px;
+  width: 100px;
+  background-color: green;
+}
+.form-progress-bar {
+  color: red;
+  background-color: rebeccapurple;
+} */
+.nhp-link:hover {
+  color: white;
+}
+
+.progressBar {
+  margin: 40px auto;
+  max-width: 850px;
+  width: 90%;
+  background-color: rgb(209, 209, 209);
+  height: 10px;
+  box-shadow: -1px -1px 5px rgb(146, 146, 146);
+}
+
+.the-bar {
+  width: 5px;
+  height: 10px;
+  background-color: rgb(0, 95, 79);
+}
+.progressIndicator {
+  background-color: red;
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  transform: translateY(-30px);
+}
+form {
+  box-sizing: border-box;
+  background-color: #e8f9f6;
+  font-weight: 400;
+  max-width: 650px;
+  /* width: 650px; */
+  margin: 10px auto;
+  margin-bottom: 100px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgb(136 136 136 / 25%);
+}
+@media (max-width: 850px) {
+  form {
+    width: 100vw;
+  }
+}
+
+/* INPUTS */
+.input-styled {
+  width: 75%;
+  padding: 8px;
+  margin: 2px;
+  /* border: none; */
+  box-shadow: 1px 0px 8px rgb(184, 184, 184);
+}
+.slider-label {
+  width: 80%;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.slider:hover {
+  opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 15px;
+  width: 25px;
+  height: 25px;
+  background: rgb(0, 95, 79);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: rgb(0, 95, 79);
+  cursor: pointer;
+}
+
+/* SELECT OPTION DROPDOWN  */
+.select-styled {
+  padding: 10px;
+  width: 100%;
+  box-shadow: 1px 0px 8px rgb(184, 184, 184);
+}
+.select-styled-required {
+  width: 100%;
+  padding: 10px;
+  border: 2px dashed red !important;
+  box-shadow: 3px 1px 8px red;
+}
+/* REQUIRED VALIDATION SELECTORS  */
+.required {
+  width: 75%;
+  padding: 8px;
+  margin: 2px;
+  color: red;
+  border: red 2px dashed !important;
+  box-shadow: 5px 5px 15px red;
+}
+.required-agree-terms {
+  color: red;
+  border: red 2px solid !important;
+  box-shadow: 3px 1px 8px red;
+}
+.required-agree {
+  color: red;
+}
+
+.text-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.form-box h2 {
+  font-family: "Mulish", sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 40px;
+  color: rgb(34, 35, 35);
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-progress {
+  display: none;
+}
+
+/* button {
+    appearance: auto;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+  } */
+.green-btn {
+  min-width: 150px;
+  background-color: rgb(0, 95, 79);
+  color: white;
+  border: none;
+  box-shadow: 1px 1px 3px #333;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: Arial;
+  margin: 5px;
+  letter-spacing: normal;
+  line-height: 17px;
+  /* padding: 29px 13px; */
+  padding-bottom: 13px;
+  padding-left: 29px;
+  padding-right: 29px;
+  padding-top: 13px;
+  text-align: center;
+  /* text-indent: 0px;
+    text-rendering: auto;
+    text-shadow: none;
+    text-size-adjust: 100%; */
+}
+
+.gold-btn {
+  background: rgb(165, 141, 78);
+  color: white;
+  border: none;
+  box-shadow: 1px 1px 3px #333;
+  padding: 5px;
+  align-items: flex-start;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  box-sizing: border-box;
+}
+/* ! this class is for the new first BACK button */
+.gold-btn-1 {
+  background: rgb(165, 141, 78);
+  color: white;
+  border: none;
+  box-shadow: 1px 1px 3px #333;
+  padding: 5px;
+  align-items: flex-start;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.free_service {
+  background-color: rgb(232, 249, 246);
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  border-bottom-color: rgb(226, 226, 226);
+  border-bottom-style: solid;
+  border-bottom-width: 0px;
+  border-left-color: rgb(226, 226, 226);
+  border-left-style: solid;
+  border-left-width: 0px;
+  border-right-color: rgb(226, 226, 226);
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-top-color: rgb(226, 226, 226);
+  border-top-style: solid;
+  border-top-width: 0px;
+  box-sizing: border-box;
+  color: rgb(102, 102, 102);
+  /* display :flex; */
+  width: 100vw;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 400;
+  height: 521px;
+  /* justify-content:center;
+  letter-spacing: normal; */
+  line-height: 24px;
+
+  margin: auto;
+  text-align: center;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 90px;
+  position: relative;
+  text-size-adjust: 100%;
+  height: 30%;
+  width: 100vw;
+}
+
+h2 .free_service {
+  color: #222222;
+}
+
+.free_service h2:hover {
+  color: rgb(2, 95, 80);
+}
+
+.disclaimer {
+  margin: 25px 50px;
+}
+.disclaimer p {
+  color: rgb(102, 102, 102);
+}
+
+.disclaimer h5 {
+  color: black;
+  font-size: 16px;
+}
+.tcpa-language-slide {
+  color: rgb(141, 141, 141);
+  line-height: 1.6rem;
+  margin: 15px 2px;
+  text-align: left;
+  font-size: 12px;
+}
+.form-group.fw.checkbox {
+  margin: 20px;
+}
