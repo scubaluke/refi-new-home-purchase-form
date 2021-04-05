@@ -3,11 +3,7 @@
 document.querySelector('#AFID').value = Array.from(window.location.search.replace('?zipcode=', '').replace('&AFID=', '')).slice(5).join('') || '465368'
 
 
-
 // SET ZIP CODE 
-// document.querySelector('#zip_code').value = window.location.search.split('zipcode=')[1].splice(0,4) || '55555'
-// Array.from(window.location.search.replace('?zipcode=', '')).splice(0,4).join('')
-
 document.querySelector('#zip_code').value =  Array.from(window.location.search.replace('?zipcode=', '')).splice(0,4).join('')
  || '55555'
 
@@ -150,8 +146,8 @@ function simplifyPhone(number) {
             emailInput.classList.add('required')
             emailInput.classList.remove('input-styled')
             return
-        }  else if (!validatePhoneNumber(form.phone_home.value)) {
-            const phoneInput = form.querySelector('#phone_home')
+        }  else if (!validatePhoneNumber(form.phone_primary.value)) {
+            const phoneInput = form.querySelector('#phone_primary')
             phoneInput.placeholder = '* (XXX) XXX-XXXX'
             phoneInput.classList.add('required')
             phoneInput.classList.remove('input-styled')
@@ -162,9 +158,9 @@ function simplifyPhone(number) {
             agreeInput.classList.remove('input-styled')
             return
         }   else {
-            form.phone_home.value = simplifyPhone(form.phone_home.value)
-            form.phone_work.value = simplifyPhone(form.phone_work.value)
-            form.phone_cell.value = simplifyPhone(form.phone_cell.value)
+            form.phone_primary.value = simplifyPhone(form.phone_primary.value)
+            // form.phone_work.value = simplifyPhone(form.phone_work.value)
+            // form.phone_cell.value = simplifyPhone(form.phone_cell.value)
             // add spinner
             document.querySelector('.pageloader').classList.add('show')
             form.submit()
