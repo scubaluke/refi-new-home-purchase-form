@@ -8,6 +8,10 @@
   color: red;
   background-color: rebeccapurple;
 } */
+
+:root {
+  --red: rgba(214, 48, 49, 1);
+}
 .nhp-link:hover {
   color: white;
 }
@@ -98,28 +102,28 @@ form {
   width: 100%;
   box-shadow: 1px 0px 8px rgb(184, 184, 184);
 }
-.select-styled-required {
-  width: 100%;
-  padding: 10px;
-  border: 2px dashed red !important;
-  box-shadow: 3px 1px 8px red;
+
+input:focus:invalid:required,
+select:focus:invalid {
+  box-shadow: inset 0 0 4px 1px var(--red);
 }
+
+.agree-terms {
+  padding: 5px;
+}
+
 /* REQUIRED VALIDATION SELECTORS  */
 .required {
-  width: 75%;
-  padding: 8px;
-  margin: 2px;
-  color: red;
-  border: red 2px dashed !important;
-  box-shadow: 5px 5px 15px red;
+  box-shadow: inset 0 0 4px 1px var(--red);
 }
+
 .required-agree-terms {
-  color: red;
-  border: red 2px solid !important;
-  box-shadow: 3px 1px 8px red;
+  border: var(--red) 2px solid;
+  box-shadow: inset 0 0 4px 1px var(--red);
 }
+
 .required-agree {
-  color: red;
+  color: var(--red);
 }
 
 .text-center {
@@ -129,7 +133,7 @@ form {
   align-items: center;
 }
 .form-box h2 {
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
   font-size: 32px;
   line-height: 40px;
   margin-bottom: 40px;

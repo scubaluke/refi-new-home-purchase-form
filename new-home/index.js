@@ -1,223 +1,276 @@
-// SET AFID 
-document.querySelector('#AFID').value = document.referrer.split('AFID=')[1] || '465368'
+// SET AFID
+document.querySelector('#AFID').value =
+  document.referrer.split('AFID=')[1] || '465368';
 
-
-// THE  FORM ELEMENT 
-const form = document.querySelector('#lp_form')
-
+// THE  FORM ELEMENT
+const form = document.querySelector('#lp_form');
 
 // prevent default on enter key!!!!
-window.addEventListener('keydown', preventSubmit)
+window.addEventListener('keydown', preventSubmit);
 function preventSubmit(e) {
-    if (e.keyCode === 13) {
-        e.preventDefault()
-        e.stopPropagation()
-    }
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
 }
 
-// handle questions with button 
-const button = document.querySelectorAll('.question')
-button.forEach(btn => btn.addEventListener('click', handleClick))
+// handle questions with button
+const button = document.querySelectorAll('.question');
+button.forEach((btn) => btn.addEventListener('click', handleClick));
 
 function handleClick(e) {
-    e.preventDefault()
-    e.stopPropagation()
-    // move progress bar
-    moveProgress()
-    const formElement = e.target.parentElement.parentElement
-    const nextFormElement = formElement.nextElementSibling
-    const field = formElement.dataset.field
-    const formValue = e.target.dataset.value;
-//    console.log({ field }, { formValue })
-    const input = document.querySelector(`[name=${field}]`)
+  e.preventDefault();
+  e.stopPropagation();
+  // move progress bar
+  moveProgress();
+  const formElement = e.target.parentElement.parentElement;
+  const nextFormElement = formElement.nextElementSibling;
+  const field = formElement.dataset.field;
+  const formValue = e.target.dataset.value;
+  //    console.log({ field }, { formValue })
+  const input = document.querySelector(`[name=${field}]`);
 
-    // set the value to be submitted
-    input.value = formValue
-    // show next, hide current 
-    formElement.style.display = 'none';
-    nextFormElement.style.display = 'block'
+  // set the value to be submitted
+  input.value = formValue;
+  // show next, hide current
+  formElement.style.display = 'none';
+  nextFormElement.style.display = 'block';
 }
 
-
 // handle questions with their own field value
-const setBtn = document.querySelectorAll('.next')
-setBtn.forEach(btn => btn.addEventListener('click', setValue))
+const setBtn = document.querySelectorAll('.next');
+setBtn.forEach((btn) => btn.addEventListener('click', setValue));
 
 function setValue(e) {
-    e.preventDefault()
-    e.stopPropagation()
+  e.preventDefault();
+  e.stopPropagation();
 
-    // selectors 
-    const formElement = e.target.parentElement.parentElement
-    const nextFormElement = formElement.nextElementSibling
+  // selectors
+  const formElement = e.target.parentElement.parentElement;
+  const nextFormElement = formElement.nextElementSibling;
 
-    if (formElement.dataset.field === 'propertyValue') {
-        formElement.style.display = 'none';
-        nextFormElement.style.display = 'block'
-        moveProgress()
+  if (formElement.dataset.field === 'propertyValue') {
+    formElement.style.display = 'none';
+    nextFormElement.style.display = 'block';
+    moveProgress();
+  }
+
+  if (formElement.dataset.field === 'state') {
+    const zip = document.querySelector('#PROP_ZIP');
+    const state = document.querySelector('#PROP_ST');
+    zip.addEventListener('input', (e) => {
+      e.target.value.length === 5
+        ? zip.classList.remove('required')
+        : zip.classList.add('required');
+    });
+    state.addEventListener('input', (e) => {
+      e.target.value.length === 2
+        ? state.classList.remove('required')
+        : state.classList.add('required');
+    });
+
+    if (!zip.value) {
+      zip.classList.add('select-styled-required');
+    } else if (!state.value) {
+      state.classList.add('select-styled-required');
+    } else {
+      formElement.style.display = 'none';
+      nextFormElement.style.display = 'block';
+      document.querySelector('[name="PROP_ST"]').value = state.value;
+      moveProgress();
     }
+  }
+  const addressInput = form.querySelector('#address');
+  const cityInput = form.querySelector('#city');
+  const stateInput = form.querySelector('#state');
+  const zip_code = document.querySelector('#zip_code');
 
-    if (formElement.dataset.field === 'state') {
-        const state = document.querySelector('#PROP_ST')
-        const zip = document.querySelector('#PROP_ZIP')
-        if (!zip.value) {
-            zip.classList.add('select-styled-required')
-            zip.classList.remove('select-styled')
-            return
-         } else if (!state.value) {
-            state.classList.add('select-styled-required')
-            state.classList.remove('select-styled')
-             return
-         } else {
-            formElement.style.display = 'none';
-            nextFormElement.style.display = 'block'
-            document.querySelector('[name="PROP_ST"]').value = state.value
-            moveProgress()
-        }
-     }
-    if (formElement.dataset.field === 'address') {
-        if (!form.address.value) {
-            const addressInput = form.querySelector('#address')
-            addressInput.placeholder = '* Address Required'
-            addressInput.classList.add('required')
-            addressInput.classList.remove('input-styled')
-            return
-        } else if (!form.city.value) {
-            const cityInput = form.querySelector('#city')
-            cityInput.placeholder = '* Required'
-            cityInput.classList.add('required')
-            cityInput.classList.remove('input-styled')
-            return
-        }
-         else if (!form.state.value) {
-            const stateInput = form.querySelector('#state')
-            stateInput.classList.add('select-styled-required')
-            stateInput.classList.remove('input-styled')
-            return
-        } else if (!form.zip_code.value) {
-        const zip_code = document.querySelector('#zip_code')        
-        zip_code.placeholder = '* Zip Code Required'
-        zip_code.classList.add('required')
-        zip_code.classList.remove('input-styled')
-        return
-        } else {
-            formElement.style.display = 'none';
-            nextFormElement.style.display = 'block'
-            moveProgress()
-        }
+  addressInput.addEventListener('input', (e) => {
+    e.target.value.length > 5
+      ? addressInput.classList.remove('required')
+      : addressInput.classList.add('required');
+  });
+  city.addEventListener('input', (e) => {
+    e.target.value.length > 2
+      ? cityInput.classList.remove('required')
+      : cityInput.classList.add('required');
+  });
+  stateInput.addEventListener('input', (e) => {
+    e.target.value.length === 2
+      ? addressInput.classList.remove('select-styled-required')
+      : addressInput.classList.add('select-styled-required');
+  });
+  zip_code.addEventListener('input', (e) => {
+    e.target.value.length === 5
+      ? zip_code.classList.remove('required')
+      : zip_code.classList.add('required');
+  });
+
+  if (formElement.dataset.field === 'address') {
+    if (!form.address.value) {
+      addressInput.classList.add('required');
     }
-    //  formElement.style.display = 'none';
-    //  nextFormElement.style.display = 'block'
+    if (!form.city.value) {
+      cityInput.classList.add('required');
+    }
+    if (!form.state.value) {
+      stateInput.classList.add('select-styled-required');
+    }
+    if (!form.zip_code.value) {
+      zip_code.classList.add('required');
+    }
+    if (
+      form.address.value &&
+      form.city.value &&
+      form.state.value &&
+      form.zip_code.value
+    ) {
+      formElement.style.display = 'none';
+      nextFormElement.style.display = 'block';
+      moveProgress();
+    }
+  }
+  //  formElement.style.display = 'none';
+  //  nextFormElement.style.display = 'block'
 }
 
 // set value for "I  agree to terms and conditions"
-const agreeInput = form.querySelector('#opt_in-checkbox')
-agreeInput.addEventListener('click', () => document.querySelector('#opt_in').value = 1)
+const agreeInput = form.querySelector('#opt_in-checkbox');
+agreeInput.addEventListener('click', (e) => {
+  if (e.target.checked) {
+    document.querySelector('#opt_in').value = 1;
+    agreeInput.parentElement.classList.remove('required-agree-terms');
+  } else {
+    document.querySelector('#opt_in').value = 0;
+    agreeInput.parentElement.classList.add('required-agree-terms');
+  }
+});
 
 // submit form
-const submitBtn = document.querySelector('.submit')
-submitBtn.addEventListener('click', sendSubmission)
-
+const submitBtn = document.querySelector('.submit');
+submitBtn.addEventListener('click', sendSubmission);
 
 function sendSubmission(e) {
-    e.preventDefault()
-    e.stopPropagation()
+  e.preventDefault();
+  e.stopPropagation();
 
-    const formElement = e.target.parentElement.parentElement
-    const phoneInput = form.querySelector('#phone_home')
+  let formIsValid = true;
+  const formElement = e.target.parentElement.parentElement;
+  const fNameInput = form.querySelector('#first_name');
+  const lNameInput = form.querySelector('#last_name');
+  const emailInput = form.querySelector('#email_address');
+  const phoneInput = form.querySelector('#phone_home');
 
-    // email validation
-    function emailIsValid(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-    }
-    function validatePhoneNumber(phoneNum) {
-        const check = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+  fNameInput.addEventListener('input', (e) => {
+    e.target.value.length >= 2
+      ? fNameInput.classList.remove('required')
+      : fNameInput.classList.add('required');
+  });
+  lNameInput.addEventListener('input', (e) => {
+    e.target.value.length >= 2
+      ? lNameInput.classList.remove('required')
+      : lNameInput.classList.add('required');
+  });
 
-        return check.test(phoneNum);
+  emailInput.addEventListener('input', (e) => {
+    emailIsValid(e.target.value)
+      ? emailInput.classList.remove('required')
+      : emailInput.classList.add('required');
+  });
+  phoneInput.addEventListener('input', (e) => {
+    validatePhoneNumber(e.target.value)
+      ? phoneInput.classList.remove('required')
+      : phoneInput.classList.add('required');
+  });
+
+  // Validation Functions
+  function emailIsValid(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validatePhoneNumber(phoneNum) {
+    const check = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    return check.test(phoneNum);
+  }
+
+  function simplifyPhone(number) {
+    return number.replace(/\D/g, '');
+  }
+
+  if (formElement.dataset.field === 'contact') {
+    if (!form.first_name.value) {
+      formIsValid = false;
+      fNameInput.classList.add('required');
     }
-    function simplifyPhone(number) {
-        return number.replace(/\D/g, '')
+    if (!form.last_name.value) {
+      formIsValid = false;
+      lNameInput.classList.add('required');
     }
-    if (formElement.dataset.field === 'contact') {
-        if (!form.first_name.value) {
-            const fNameInput = form.querySelector('#first_name')
-            fNameInput.placeholder = '* First Name Required'
-            fNameInput.classList.add('required')
-            fNameInput.classList.remove('input-styled')
-            return
-        } else if (!form.last_name.value) {
-            const lNameInput = form.querySelector('#last_name')
-            lNameInput.placeholder = '* Last Name Required'
-            lNameInput.classList.add('required')
-            lNameInput.classList.remove('input-styled')
-            return
-        } else if (!emailIsValid(form.email_address.value)) {
-            const emailInput = form.querySelector('#email_address')
-            emailInput.placeholder = '* Email Required'
-            emailInput.classList.add('required')
-            emailInput.classList.remove('input-styled')
-            return
-        } else if (!validatePhoneNumber(form.phone_home.value)) {
-            phoneInput.placeholder = '* XXX-XXX-XXXX'
-            phoneInput.classList.add('required')
-            phoneInput.classList.remove('input-styled')
-            return
-        } else if (!agreeInput.checked) {
-            agreeInput.parentElement.classList.add('required-agree')
-            agreeInput.classList.add('required-agree-terms')
-            agreeInput.classList.remove('input-styled')
-            return
-        } else {
-            phoneInput.value = simplifyPhone(phoneInput.value)
-            form.phone_work.value = simplifyPhone(form.phone_work.value)
-            form.phone_cell.value = simplifyPhone(form.phone_cell.value)
-            // add spinner 
-            document.querySelector('.pageloader').classList.add('show')
-            form.submit()
-        }
+    if (!emailIsValid(form.email_address.value)) {
+      formIsValid = false;
+      emailInput.classList.add('required');
     }
+    if (!validatePhoneNumber(form.phone_home.value)) {
+      formIsValid = false;
+      phoneInput.classList.add('required');
+    }
+    if (!agreeInput.checked) {
+      formIsValid = false;
+      agreeInput.parentElement.classList.add('required-agree-terms');
+      agreeInput.classList.add('required-agree-terms');
+    }
+    if (formIsValid) {
+      phoneInput.value = simplifyPhone(phoneInput.value);
+      form.phone_work.value = simplifyPhone(form.phone_work.value);
+      form.phone_cell.value = simplifyPhone(form.phone_cell.value);
+      // add spinner
+      document.querySelector('.pageloader').classList.add('show');
+      form.submit();
+    }
+  }
 }
 
-
-
-// handle sliders 
-const sliders = document.querySelectorAll(`[type='range']`)
-sliders.forEach(slider => slider.addEventListener('input', displaySliderValue))
+// handle sliders
+const sliders = document.querySelectorAll(`[type='range']`);
+sliders.forEach((slider) =>
+  slider.addEventListener('input', displaySliderValue)
+);
 
 function displaySliderValue(e) {
-// running slider function
-    const displayValue = document.querySelector(`#${e.target.id}Text`)
-    displayValue.innerHTML = `<span>$${Number(e.target.value).toLocaleString()}</span>`
+  // running slider function
+  const displayValue = document.querySelector(`#${e.target.id}Text`);
+  displayValue.innerHTML = `<span>$${Number(
+    e.target.value
+  ).toLocaleString()}</span>`;
 }
 
 //go back
-const backBtn = document.querySelectorAll('.gold-btn')
-backBtn.forEach(btn => btn.addEventListener('click', goBack))
+const backBtn = document.querySelectorAll('.gold-btn');
+backBtn.forEach((btn) => btn.addEventListener('click', goBack));
 function progressBack() {
-    let theBar = document.querySelector('.the-bar')
-    const amountToMove = document.querySelectorAll('.form-box')
-    const distanceToMove = 100 / amountToMove.length
-    theBar.style.width = `${moved -= distanceToMove}%`
+  let theBar = document.querySelector('.the-bar');
+  const amountToMove = document.querySelectorAll('.form-box');
+  const distanceToMove = 100 / amountToMove.length;
+  theBar.style.width = `${(moved -= distanceToMove)}%`;
 }
 
 function goBack(e) {
-    e.preventDefault()
+  e.preventDefault();
 
-    const formElement = e.target.parentElement
-    const prevElement = formElement.previousElementSibling;
-    formElement.style.display = 'none'
-    prevElement.style.display = 'block'
-    progressBack()
+  const formElement = e.target.parentElement;
+  const prevElement = formElement.previousElementSibling;
+  formElement.style.display = 'none';
+  prevElement.style.display = 'block';
+  progressBack();
 }
 
-
 // move progress bar
-let moved = 1 // progress bar memory
+let moved = 1; // progress bar memory
 function moveProgress() {
-    let theBar = document.querySelector('.the-bar')
-    const amountToMove = document.querySelectorAll('.form-box')
-    const distanceToMove = 100 / amountToMove.length
-    theBar.style.width = `${moved += distanceToMove}%`
+  let theBar = document.querySelector('.the-bar');
+  const amountToMove = document.querySelectorAll('.form-box');
+  const distanceToMove = 100 / amountToMove.length;
+  theBar.style.width = `${(moved += distanceToMove)}%`;
 }
 
 // todo: progress indicator dots

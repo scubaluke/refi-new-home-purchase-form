@@ -321,17 +321,28 @@ integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfc
 
 
          <!-- form box 9 start -->
-        <div data-field="state" class="form-box form-box-9" style="display:none;">
+        <div data-field="state" 
+             class="form-box form-box-9" 
+             style="display:none;">
             <h2 class="text-center">In what city will the property be located?</h2>
             <div class="form-group text-center fw">
-                <input type="number" name="PROP_ZIP" id="PROP_ZIP" class="form-control fld-center"  value=""
-                    placeholder="Zip Code *">
+                <input type="number" 
+                        name="PROP_ZIP" id="PROP_ZIP" class="form-control fld-center"  
+                        value=""
+                        pattern="[0-9]{5}"
+                        placeholder="Zip Code *" 
+                        required>
             </div>
             
-            <h2 style="margin: auto;" class="text-center">State</h2>
+            <h2 style="margin: auto;" 
+                class="text-center">
+                State
+            </h2>
 
             <div class="form-group text-center fw">
-                <select class="select-styled" id="PROP_ST" name="PROP_ST" class="form-control fld-center">
+                <select class="select-styled" id="PROP_ST" name="PROP_ST" class="form-control fld-center" 
+                pattern='^[A-Z]{2}'
+                required>
                     <option value="" selected="selected">Select State *</option>
                     <option value="AL">AL</option>
                     <option value="AK">AK</option>
@@ -461,15 +472,24 @@ integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfc
         <div data-field="address" class="form-box form-box-12" style="display:none;">
             <h2 class="text-center">What is Your Current Address?</h2>
             <div class="form-group text-center fw">
-                <input type="text" name="address" id="address" class="input-styled form-control fld-center"
-                    placeholder="Address *">
+                <input type="text" 
+                        name="address" 
+                        id="address" 
+                        class="input-styled form-control fld-center"
+                        placeholder="Address *">
             </div>
             <div class="form-group text-center fw">
-                <input type="text" name="city" id="city" class="input-styled form-control fld-center"
-                    placeholder="City *">
+                <input  type="text" 
+                        name="city" 
+                        id="city" 
+                        class="input-styled form-control fld-center"
+                        placeholder="City *">
             </div>
             <div class="form-group text-center fw">
-                <select class="select-styled" id="state" name="state" class="form-control fld-center">
+                <select class="select-styled" 
+                        id="state" 
+                        name="state" 
+                        class="form-control fld-center">
                     <option value="" selected="selected">Select State *</option>
                     <option value="AL">AL</option>
                     <option value="AK">AK</option>
@@ -789,32 +809,52 @@ integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfc
         <div data-field="contact" class="form-box form-box-13" style="display:none;">
             <h2 class="text-center">How can we contact you?</h2>
             <div class="form-group text-center fw">
-                <input type="text" name="first_name" id="first_name" class="input-styled form-control fld-center"
-                    placeholder="First Name *">
+                <input  type="text" 
+                        name="first_name" 
+                        id="first_name" 
+                        class="input-styled form-control fld-center"
+                        placeholder="First Name *">
             </div>
             <div class="form-group text-center fw">
-                <input type="text" name="last_name" id="last_name" class="input-styled form-control fld-center"
-                    placeholder="Last Name *">
+                <input  type="text" 
+                        name="last_name" 
+                        id="last_name" 
+                        class="input-styled form-control fld-center"
+                        placeholder="Last Name *">
             </div>
             <div class="form-group text-center fw">
-                <input type="email" name="email_address" id="email_address" class="input-styled form-control fld-center"
-                    placeholder="Email Address *">
+                <input  type="email" 
+                        name="email_address" 
+                        id="email_address" 
+                        class="input-styled form-control fld-center"
+                        placeholder="Email Address *">
             </div>
             <div class="form-group text-center fw">
-                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone_home" id="phone_home"
-                    class=" input-styled form-control fld-center" placeholder="Phone Home *">
+                <input  type="tel" 
+                        pattern="[0-9]{3}[.-]?[0-9]{3}[-.]?[0-9]{4}" name="phone_home" 
+                        id="phone_home"
+                        class=" input-styled form-control fld-center" 
+                        placeholder="Phone Home *">
             </div>
             <div class="form-group text-center fw">
-                <input type="text" name="phone_work" id="phone_work" class="input-styled form-control fld-center"
-                    placeholder="Work Phone">
+                <input type="text" 
+                        name="phone_work" 
+                        id="phone_work" 
+                        class="input-styled form-control fld-center"
+                        placeholder="Work Phone">
             </div>
             <div class="form-group text-center fw">
-                <input type="text" name="phone_cell" id="phone_cell" class="input-styled form-control fld-center"
-                    placeholder="Cell Phone">
+                <input  type="text" 
+                        name="phone_cell" 
+                        id="phone_cell" 
+                        class="input-styled form-control fld-center"
+                        placeholder="Cell Phone">
             </div>
             <div class="form-group text-center fw">
-                <select class="select-styled" id="best_time" name="best_time"
-                    class="input-styledform-control fld-center">
+                <select class="select-styled" 
+                        id="best_time" 
+                        name="best_time"
+                        class="input-styled form-control fld-center">
                     <option value="" selected="selected">Select Best Time To Call</option>
                     <option value="M">Morning</option>
                     <option value="A">Afternoon</option>
