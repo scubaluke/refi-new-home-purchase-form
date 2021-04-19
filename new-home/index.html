@@ -831,24 +831,11 @@ integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfc
             </div>
             <div class="form-group text-center fw">
                 <input  type="tel" 
-                        pattern="[0-9]{3}[.-]?[0-9]{3}[-.]?[0-9]{4}" name="phone_home" 
-                        id="phone_home"
+                        pattern="[0-9]{3}[.-]?[0-9]{3}[-.]?[0-9]{4}" 
+                        name="phone_primary" 
+                        id="phone_primary"
                         class=" input-styled form-control fld-center" 
-                        placeholder="Phone Home *">
-            </div>
-            <div class="form-group text-center fw">
-                <input type="text" 
-                        name="phone_work" 
-                        id="phone_work" 
-                        class="input-styled form-control fld-center"
-                        placeholder="Work Phone">
-            </div>
-            <div class="form-group text-center fw">
-                <input  type="text" 
-                        name="phone_cell" 
-                        id="phone_cell" 
-                        class="input-styled form-control fld-center"
-                        placeholder="Cell Phone">
+                        placeholder="Primary Phone *">
             </div>
             <div class="form-group text-center fw">
                 <select class="select-styled" 
@@ -925,6 +912,7 @@ integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfc
         <input type="hidden" name="SR_URL" value="https://championlender.com/" />
         <input type="hidden" name="DOWN_PMT" value="" />
         <input type="hidden" name="EST_VAL" value="" />
+        <input type="hidden" name='text_verified' value='false' />
 
         <!-- <input type="hidden" name="state" /> -->
 

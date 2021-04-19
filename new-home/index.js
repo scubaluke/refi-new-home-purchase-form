@@ -159,7 +159,7 @@ function sendSubmission(e) {
   const fNameInput = form.querySelector('#first_name');
   const lNameInput = form.querySelector('#last_name');
   const emailInput = form.querySelector('#email_address');
-  const phoneInput = form.querySelector('#phone_home');
+  const phoneInput = form.querySelector('#phone_primary');
 
   fNameInput.addEventListener('input', (e) => {
     e.target.value.length >= 2
@@ -210,7 +210,7 @@ function sendSubmission(e) {
       formIsValid = false;
       emailInput.classList.add('required');
     }
-    if (!validatePhoneNumber(form.phone_home.value)) {
+    if (!validatePhoneNumber(form.phone_primary.value)) {
       formIsValid = false;
       phoneInput.classList.add('required');
     }
@@ -221,8 +221,7 @@ function sendSubmission(e) {
     }
     if (formIsValid) {
       phoneInput.value = simplifyPhone(phoneInput.value);
-      form.phone_work.value = simplifyPhone(form.phone_work.value);
-      form.phone_cell.value = simplifyPhone(form.phone_cell.value);
+      form.phone_primary.value = simplifyPhone(form.phone_primary.value);
       // add spinner
       document.querySelector('.pageloader').classList.add('show');
       form.submit();
