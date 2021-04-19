@@ -904,7 +904,7 @@ integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfc
         <input type="hidden" autocomplete="off" name="home_found" id="home_found" />
         <input type="hidden" autocomplete="off" name="BUY_TIMEFRAME" id="BUY_TIMEFRAME" />
         <input type="hidden" autocomplete="off" name="co_borrower" id="co_borrower" />
-        <input type="hidden" name="income_amount" value="" />
+        <input type="hidden" name="ANNUAL_VERIFIABLE_INCOME" value="YES" />
         <input type="hidden" autocomplete="off" name="opt_in" id="opt_in" />
         <input type="hidden" autocomplete="off" name="PRODUCT" id="PRODUCT" value="PP_NEWHOME" />
 
@@ -1090,14 +1090,15 @@ integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfc
     <script src="./index.js"></script>
 
     <script id="LeadiDscript" type="text/javascript">
-        (function() {
-        var s = document.createElement('script');
-        s.id = 'LeadiDscript_campaign';
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = '//create.lidstatic.com/campaign/b27634ee-7a20-1672-8d36-d01cb06db3bf.js?snippet_version=2';
-        var LeadiDscript = document.getElementById('LeadiDscript');
-        LeadiDscript.parentNode.insertBefore(s, LeadiDscript);
+        (function () {
+  const s = document.createElement('script');
+  s.id = 'LeadiDscript_campaign';
+  s.type = 'text/javascript';
+  s.async = true;
+          s.src =
+    '//create.lidstatic.com/campaign/b27634ee-7a20-1672-8d36-d01cb06db3bf.js?snippet_version=2';
+  const LeadiDscript = document.getElementById('LeadiDscript');
+  LeadiDscript.parentNode.insertBefore(s, LeadiDscript);
         })();
         </script>
         <noscript><img src='//create.leadid.com/noscript.gif?lac=5a78319c-dbbd-54af-cb0a-a61a01c27aa9&lck=b27634ee-7a20-1672-8d36-d01cb06db3bf&snippet_version=2' /></noscript>
