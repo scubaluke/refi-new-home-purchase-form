@@ -1,3 +1,5 @@
+import { emailIsValid, validatePhoneNumber } from '../utils.js';
+
 // SET AFID
 document.querySelector('#AFID').value =
   document.referrer.split('AFID=')[1] || '465368';
@@ -160,12 +162,15 @@ function sendSubmission(e) {
   const lNameInput = form.querySelector('#last_name');
   const emailInput = form.querySelector('#email_address');
   const phoneInput = form.querySelector('#phone_primary');
+  const phoneError = form.querySelector('#phone-error');
+  const phone_regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
   fNameInput.addEventListener('input', (e) => {
     e.target.value.length >= 2
       ? fNameInput.classList.remove('required')
       : fNameInput.classList.add('required');
   });
+
   lNameInput.addEventListener('input', (e) => {
     e.target.value.length >= 2
       ? lNameInput.classList.remove('required')
@@ -178,24 +183,11 @@ function sendSubmission(e) {
       : emailInput.classList.add('required');
   });
   phoneInput.addEventListener('input', (e) => {
-    validatePhoneNumber(e.target.value)
+    phoneError.classList.add('hidden');
+    phone_regex.test(e.target.value)
       ? phoneInput.classList.remove('required')
       : phoneInput.classList.add('required');
   });
-
-  // Validation Functions
-  function emailIsValid(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-
-  function validatePhoneNumber(phoneNum) {
-    const check = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-    return check.test(phoneNum);
-  }
-
-  function simplifyPhone(number) {
-    return number.replace(/\D/g, '');
-  }
 
   if (formElement.dataset.field === 'contact') {
     if (!form.first_name.value) {
@@ -210,22 +202,31 @@ function sendSubmission(e) {
       formIsValid = false;
       emailInput.classList.add('required');
     }
-    if (!validatePhoneNumber(form.phone_primary.value)) {
-      formIsValid = false;
-      phoneInput.classList.add('required');
-    }
     if (!agreeInput.checked) {
       formIsValid = false;
       agreeInput.parentElement.classList.add('required-agree-terms');
       agreeInput.classList.add('required-agree-terms');
     }
-    if (formIsValid) {
-      phoneInput.value = simplifyPhone(phoneInput.value);
-      form.phone_primary.value = simplifyPhone(form.phone_primary.value);
-      // add spinner
-      document.querySelector('.pageloader').classList.add('show');
-      form.submit();
-    }
+
+    (async () => {
+      const validatedPhone = await validatePhoneNumber(
+        form.phone_primary.value
+      );
+
+      if (formIsValid && validatedPhone.phoneNumber) {
+        console.log('Phone number confirmed...', validatedPhone.phoneNumber);
+        form.phone_primary.value = validatedPhone.phoneNumber;
+        document.querySelector('.pageloader').classList.add('show');
+        form.submit();
+      } else {
+        console.log('Phone number invalid...', validatedPhone);
+        formIsValid = false;
+        phoneInput.classList.add('required');
+        form.scrollIntoView(true);
+        //Display error tag.
+        phoneError.classList.remove('hidden');
+      }
+    })();
   }
 }
 
@@ -272,7 +273,7 @@ function moveProgress() {
   theBar.style.width = `${(moved += distanceToMove)}%`;
 }
 
-// todo: progress indicator dots
+// TODO: progress indicator dots
 // const progressIndicator = document.querySelectorAll('.progressIndicator')
 // console.log([...progressIndicator]);
 

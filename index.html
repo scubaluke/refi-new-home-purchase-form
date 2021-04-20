@@ -665,8 +665,15 @@
                     placeholder="Email Address *">
             </div>
             <div class="form-group text-center fw">
-                <input type="tel" pattern="[0-9]{3}[-.]?[0-9]{3}[-.]?[0-9]{4}" name="phone_primary" id="phone_primary"
-                    class=" input-styled form-control fld-center" placeholder="Primary Phone *" required >
+                <input  type="tel" 
+                        pattern="[0-9]{3}[-.]?[0-9]{3}[-.]?[0-9]{4}"
+                        name="phone_primary"
+                        id="phone_primary"
+                        class=" input-styled form-control fld-center"
+                        placeholder="Primary Phone *"
+                        required />
+                <span id='phone-error' 
+                class='hidden'>Oops! That doesn't appear to be a valid phone number.</span>
             </div>
             <!-- <div class="form-group text-center fw">
                 <input type="text" name="phone_work" id="phone_work" class="input-styled form-control fld-center"
@@ -924,7 +931,7 @@ Premier Partners and for SecureRights, parties calling on behalf of Champion Len
 
     </footer>
 
-    <script src="./index.js"></script>
+    <script type="module" src="./index.js"></script>
 
     <script id="LeadiDscript" type="text/javascript">
         (function () {

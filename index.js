@@ -1,3 +1,5 @@
+import { emailIsValid, validatePhoneNumber } from './utils.js';
+
 // SET AFID
 // document.querySelector('#AFID').value = document.referrer.split('AFID=')[1] || '465368'
 document.querySelector('#AFID').value =
@@ -135,26 +137,13 @@ function sendSubmission(e) {
 
   const formElement = e.target.parentElement.parentElement;
 
-  // email validation
-  function emailIsValid(email) {
-    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-      email
-    );
-  }
-  function validatePhoneNumber(phoneNum) {
-    const regcheck = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-
-    return regcheck.test(phoneNum);
-  }
-  function simplifyPhone(number) {
-    return number.replace(/\D/g, '');
-  }
-
   if (formElement.dataset.field === 'contact') {
     const fNameInput = form.querySelector('#first_name');
     const lNameInput = form.querySelector('#last_name');
     const phoneInput = form.querySelector('#phone_primary');
     const emailInput = form.querySelector('#email_address');
+    const phoneError = form.querySelector('#phone-error');
+    let formIsValid = true;
 
     fNameInput.addEventListener('input', (e) => {
       e.target.value.length >= 2
@@ -167,7 +156,8 @@ function sendSubmission(e) {
         : lNameInput.classList.add('required');
     });
     phoneInput.addEventListener('input', (e) => {
-      e.target.value.length >= 5
+      phoneError.classList.add('hidden');
+      e.target.value.length >= 10
         ? phoneInput.classList.remove('required')
         : phoneInput.classList.add('required');
     });
@@ -176,28 +166,46 @@ function sendSubmission(e) {
         ? emailInput.classList.remove('required')
         : emailInput.classList.add('required');
     });
+
     if (!form.first_name.value) {
       fNameInput.classList.add('required');
+      formIsValid = false;
     }
     if (!form.last_name.value) {
       lNameInput.classList.add('required');
+      formIsValid = false;
     }
     if (!emailIsValid(form.email_address.value)) {
       emailInput.classList.add('required');
+      formIsValid = false;
     }
     if (!validatePhoneNumber(form.phone_primary.value)) {
       phoneInput.classList.add('required');
+      formIsValid = false;
     }
     if (!agreeInput.checked) {
       agreeInput.parentElement.classList.add('required-agree-terms');
-    } else {
-      form.phone_primary.value = simplifyPhone(form.phone_primary.value);
-      // form.phone_work.value = simplifyPhone(form.phone_work.value)
-      // form.phone_cell.value = simplifyPhone(form.phone_cell.value)
-      // add spinner
-      document.querySelector('.pageloader').classList.add('show');
-      form.submit();
+      formIsValid = false;
     }
+
+    (async () => {
+      const validatedPhone = await validatePhoneNumber(
+        form.phone_primary.value
+      );
+
+      if (formIsValid && validatedPhone.phoneNumber) {
+        console.log('Phone number confirmed...', validatedPhone.phoneNumber);
+        form.phone_primary.value = validatedPhone.phoneNumber;
+        document.querySelector('.pageloader').classList.add('show');
+        form.submit();
+      } else {
+        console.log('Phone number invalid...', validatedPhone);
+        formIsValid = false;
+        phoneInput.classList.add('required');
+        phoneError.classList.remove('hidden');
+        form.scrollIntoView(true);
+      }
+    })();
   }
 }
 

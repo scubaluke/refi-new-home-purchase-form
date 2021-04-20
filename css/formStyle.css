@@ -147,12 +147,12 @@ select:focus:invalid {
 }
 
 /* button {
-    appearance: auto;
-    text-rendering: auto;
-    color: -internal-light-dark(black, white);
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
+  appearance: auto;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
     text-indent: 0px;
     text-shadow: none;
     display: inline-block;
@@ -189,9 +189,9 @@ select:focus:invalid {
   padding-top: 13px;
   text-align: center;
   /* text-indent: 0px;
-    text-rendering: auto;
-    text-shadow: none;
-    text-size-adjust: 100%; */
+  text-rendering: auto;
+  text-shadow: none;
+  text-size-adjust: 100%; */
 }
 
 .gold-btn {
@@ -293,6 +293,23 @@ h2 .free_service {
   margin: 15px 2px;
   text-align: left;
   font-size: 12px;
+}
+
+#phone-error {
+  background: var(--red);
+  padding: 15px;
+  color: whitesmoke;
+  position: absolute;
+  border-radius: 5px;
+  top: 100%;
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+.form-group {
+  position: relative;
 }
 .form-group.fw.checkbox {
   margin: 20px;
