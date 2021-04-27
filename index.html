@@ -110,7 +110,7 @@
 
     </div>
     <!-- REFI campaign action="https://chlend.linktrustleadgen.com/Lead/432598/SimplePost" -->
-    <form id="lp_form" name="lp_form" method="post" action="https://chlend.linktrustleadgen.com/Lead/438236/SimplePost">
+    <form id="lp_form" name="lp_form" method="post" action="https://chlend.linktrustleadgen.com/Lead/432598/SimplePost">
 
         <input type='hidden' id='ResponseFormat' name='ResponseFormat' value='json' />
         <input type='hidden' id='successUrl' name='successUrl' value='https://championlender.com/' />
@@ -737,6 +737,7 @@
             <button class=" gold-btn">Go Back</button>
         </div>
         <!-- form box 13 end -->
+        <input type="hidden" autocomplete="off" name="text_verified" id="text_verified" value="false" />
 
         <input type="hidden" autocomplete="off" name="BANKRUPTCY" id="BANKRUPTCY" />
         <input type="hidden" autocomplete="off" name="opt_in" id="opt_in" />
@@ -935,13 +936,14 @@ Premier Partners and for SecureRights, parties calling on behalf of Champion Len
 
     <script id="LeadiDscript" type="text/javascript">
         (function () {
-            var s = document.createElement('script');
-            s.id = 'LeadiDscript_campaign';
-            s.type = 'text/javascript';
-            s.async = true;
-            s.src = '//create.lidstatic.com/campaign/cd215e19-865f-3649-c858-0b6646c7cfa9.js?snippet_version=2';
-            var LeadiDscript = document.getElementById('LeadiDscript');
-            LeadiDscript.parentNode.insertBefore(s, LeadiDscript);
+          const s = document.createElement('script');
+          s.id = 'LeadiDscript_campaign';
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src =
+    '//create.lidstatic.com/campaign/cd215e19-865f-3649-c858-0b6646c7cfa9.js?snippet_version=2';
+          const LeadiDscript = document.getElementById('LeadiDscript');
+          LeadiDscript.parentNode.insertBefore(s, LeadiDscript);
         })();
     </script>
     <noscript><img
